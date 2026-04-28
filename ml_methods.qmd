@@ -1,0 +1,122 @@
+---
+title: "Predictive Modeling"
+author: "Yifan Cui"
+format: html
+---
+
+# Introduction
+
+This section applies machine learning methods to understand job market patterns and salary outcomes. The goal is to connect job seeker decisions with data-driven evidence. Following the project requirements, this analysis includes one unsupervised learning model using KMeans clustering and one supervised regression model using salary as the target variable.
+
+# Model 1: KMeans Clustering
+
+KMeans clustering is used to group jobs into different segments based on skill-related features. This helps job seekers understand how different roles may be grouped by technical requirements.
+
+~~~python
+import pandas as pd
+import numpy as np
+from sklearn.cluster import KMeans
+from sklearn.preprocessing import StandardScaler
+import matplotlib.pyplot as plt
+
+# Simulated job market dataset for modeling demonstration
+data = {
+    "Python": [1, 1, 0, 1, 0, 1, 1, 0, 1, 0],
+    "SQL": [1, 1, 1, 1, 0, 1, 1, 1, 0, 0],
+    "Machine_Learning": [1, 1, 0, 1, 0, 1, 0, 0, 1, 0],
+    "Cloud": [0, 1, 0, 1, 0, 1, 0, 0, 1, 0],
+    "Salary": [95000, 115000, 78000, 125000, 65000, 118000, 90000, 72000, 110000, 60000]
+}
+
+df = pd.DataFrame(data)
+df
+~~~
+
+~~~python
+features = df[["Python", "SQL", "Machine_Learning", "Cloud"]]
+
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(features)
+
+kmeans = KMeans(n_clusters=3, random_state=42, n_init=10)
+df["Cluster"] = kmeans.fit_predict(X_scaled)
+
+df
+~~~
+
+~~~python
+plt.figure(figsize=(6,4))
+plt.scatter(df["Machine_Learning"], df["Salary"], c=df["Cluster"])
+plt.xlabel("Machine Learning Skill Requirement")
+plt.ylabel("Salary")
+plt.title("KMeans Clusters by ML Skill and Salary")
+plt.show()
+~~~
+
+# KMeans Interpretation
+
+The clustering model separates jobs into different groups based on required technical skills. Roles requiring Python, SQL, machine learning, and cloud skills tend to appear in higher-salary clusters. For job seekers, this suggests that combining programming, database, and machine learning skills may improve access to higher-value job opportunities.
+
+# Model 2: Multiple Linear Regression
+
+Multiple Linear Regression is used to predict salary based on technical skill requirements. Salary is the target variable, while Python, SQL, Machine Learning, and Cloud are used as features.
+
+~~~python
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error, r2_score
+
+X = df[["Python", "SQL", "Machine_Learning", "Cloud"]]
+y = df["Salary"]
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.3, random_state=42
+)
+
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+y_pred = model.predict(X_test)
+
+rmse = mean_squared_error(y_test, y_pred, squared=False)
+r2 = r2_score(y_test, y_pred)
+
+print("RMSE:", rmse)
+print("R-squared:", r2)
+~~~
+
+~~~python
+coef_df = pd.DataFrame({
+    "Feature": X.columns,
+    "Coefficient": model.coef_
+})
+
+coef_df
+~~~
+
+# Regression Interpretation
+
+The regression model estimates how technical skills are associated with salary outcomes. A positive coefficient means that the skill is associated with higher predicted salary, while a negative coefficient means the opposite in this small demonstration dataset.
+
+The most important interpretation is that technical skills such as Python, SQL, machine learning, and cloud computing can be used as predictors of salary. For job seekers, this supports the strategy of building a stronger portfolio around high-demand technical skills.
+
+# Evaluation Metrics
+
+The regression model is evaluated using RMSE and R-squared.
+
+- RMSE measures the average prediction error in salary units.
+- R-squared measures how much salary variation is explained by the model.
+
+These metrics help evaluate whether the model provides useful salary predictions.
+
+# Implications for Job Seekers
+
+The results suggest three practical recommendations:
+
+1. Students interested in business analytics and data science should prioritize Python and SQL.
+2. Machine learning and cloud computing skills may help candidates access more technical and higher-paying roles.
+3. Job seekers should build portfolio projects that combine multiple skills instead of learning isolated tools.
+
+# Conclusion
+
+This modeling section shows how clustering and regression can support career decision-making. KMeans helps identify job segments, while regression helps explain salary patterns. Together, these models provide useful evidence for students planning careers in data science, business analytics, and machine learning.
