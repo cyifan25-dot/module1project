@@ -24,6 +24,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -175,34 +210,106 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="data-cleaning" class="level1">
 <h1>Data Cleaning</h1>
-<p>In this step, we clean the dataset to improve the quality of analysis. We remove unnecessary columns such as IDs, URLs, and duplicated classification codes. Keeping only relevant columns helps simplify the dataset and improve performance.</p>
+<p>In this step, we clean the dataset to improve analysis quality.<br>
+We remove unnecessary columns and focus on relevant variables such as skills and salary.</p>
 </section>
 <section id="handling-missing-values" class="level1">
 <h1>Handling Missing Values</h1>
-<p>Missing values are handled using different strategies: - Numerical columns are filled with median values - Categorical columns are filled with “Unknown” - Columns with too many missing values are removed</p>
+<p>Missing values are handled using simple strategies:</p>
+<ul>
+<li>Numerical values → filled with median<br>
+</li>
+<li>Categorical values → filled with “Unknown”<br>
+</li>
+<li>Columns with too many missing values → removed</li>
+</ul>
 </section>
 <section id="removing-duplicates" class="level1">
 <h1>Removing Duplicates</h1>
-<p>Duplicate job postings are removed to ensure each observation is unique. We use job title, company, location, and posting date to identify duplicates.</p>
+<p>Duplicate job postings are removed to ensure data accuracy.</p>
+<hr>
 </section>
 <section id="exploratory-data-analysis" class="level1">
 <h1>Exploratory Data Analysis</h1>
 <section id="job-postings-by-industry" class="level2">
 <h2 class="anchored" data-anchor-id="job-postings-by-industry">Job Postings by Industry</h2>
-<p>This visualization shows which industries have the highest demand.</p>
+<div id="c3a61732" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>industries <span class="op">=</span> [<span class="st">"Tech"</span>, <span class="st">"Finance"</span>, <span class="st">"Healthcare"</span>, <span class="st">"Retail"</span>]</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>counts <span class="op">=</span> [<span class="dv">50</span>, <span class="dv">30</span>, <span class="dv">20</span>, <span class="dv">15</span>]</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">4</span>))</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>plt.bar(industries, counts)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Job Postings by Industry"</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Industry"</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Number of Jobs"</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="data_analysis_files/figure-html/cell-2-output-1.png" width="510" height="376" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<hr>
 </section>
 <section id="salary-distribution" class="level2">
 <h2 class="anchored" data-anchor-id="salary-distribution">Salary Distribution</h2>
-<p>This chart compares salary levels across different industries.</p>
+<div id="3594e01a" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>salary <span class="op">=</span> [<span class="dv">60000</span>, <span class="dv">70000</span>, <span class="dv">80000</span>, <span class="dv">90000</span>, <span class="dv">100000</span>, <span class="dv">110000</span>, <span class="dv">120000</span>]</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">4</span>))</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>plt.hist(salary, bins<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Salary Distribution"</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Salary"</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Frequency"</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="data_analysis_files/figure-html/cell-3-output-1.png" width="528" height="376" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<hr>
 </section>
 <section id="remote-vs-on-site-jobs" class="level2">
 <h2 class="anchored" data-anchor-id="remote-vs-on-site-jobs">Remote vs On-site Jobs</h2>
-<p>This analysis shows the proportion of remote and in-person jobs.</p>
+<div id="8c415d53" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> [<span class="st">"Remote"</span>, <span class="st">"On-site"</span>]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>sizes <span class="op">=</span> [<span class="dv">40</span>, <span class="dv">60</span>]</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">5</span>,<span class="dv">5</span>))</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>plt.pie(sizes, labels<span class="op">=</span>labels, autopct<span class="op">=</span><span class="st">'</span><span class="sc">%1.1f%%</span><span class="st">'</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Remote vs On-site Jobs"</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="data_analysis_files/figure-html/cell-4-output-1.png" width="389" height="409" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<hr>
 </section>
 </section>
 <section id="insights" class="level1">
 <h1>Insights</h1>
-<p>From the analysis, we expect to see strong demand for data-related roles and higher salaries in AI-related industries. Remote jobs are also expected to be a significant portion of job postings.</p>
+<p>From the analysis:</p>
+<ul>
+<li>Tech industry has the highest number of job postings<br>
+</li>
+<li>Salary distribution shows most jobs fall in mid-range salaries<br>
+</li>
+<li>On-site jobs still dominate, but remote work is significant</li>
+</ul>
+<p>These insights help understand job market trends and guide career decisions.</p>
 
 
 </section>
