@@ -1,0 +1,23 @@
+project:
+  type: website
+
+website:
+  title: "Job Market Analysis 2024"
+  navbar:
+    left:
+      - href: index.qmd
+        text: "Home"
+      - href: data_analysis.qmd
+        text: "Data Analysis"
+      - href: skill_gap_analysis.qmd
+        text: "Skill Gap Analysis"
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+
+execute:
+  echo: true
+  eval: true
+  code-fold: true
