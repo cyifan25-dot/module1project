@@ -1,0 +1,38 @@
+---
+title: "Data Analysis"
+author: "Yifan Cui"
+format: html
+---
+
+# Data Cleaning
+
+In this step, we clean the dataset to improve the quality of analysis. We remove unnecessary columns such as IDs, URLs, and duplicated classification codes. Keeping only relevant columns helps simplify the dataset and improve performance.
+
+# Handling Missing Values
+
+Missing values are handled using different strategies:
+- Numerical columns are filled with median values
+- Categorical columns are filled with "Unknown"
+- Columns with too many missing values are removed
+
+# Removing Duplicates
+
+Duplicate job postings are removed to ensure each observation is unique. We use job title, company, location, and posting date to identify duplicates.
+
+# Exploratory Data Analysis
+
+## Job Postings by Industry
+
+This visualization shows which industries have the highest demand.
+
+## Salary Distribution
+
+This chart compares salary levels across different industries.
+
+## Remote vs On-site Jobs
+
+This analysis shows the proportion of remote and in-person jobs.
+
+# Insights
+
+From the analysis, we expect to see strong demand for data-related roles and higher salaries in AI-related industries. Remote jobs are also expected to be a significant portion of job postings.
