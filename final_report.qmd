@@ -1,0 +1,179 @@
+---
+title: "Evaluating Personal Job Market Prospects in 2024"
+subtitle: "Final Report"
+author: "Yifan Cui"
+date: today
+format:
+  docx:
+    toc: true
+---
+
+# Executive Summary
+
+This project analyzes job market trends in 2024 from the perspective of a job seeker interested in business analytics, data science, and machine learning roles. The project focuses on understanding which skills are most valuable, how technical skills relate to salary potential, and how machine learning methods can support career planning.
+
+The analysis includes data cleaning, exploratory data analysis, skill gap analysis, KMeans clustering, and multiple linear regression. Overall, the findings suggest that technical skills such as Python, SQL, machine learning, data visualization, and cloud computing are important for job seekers who want to remain competitive in the modern labor market.
+
+# 1. Introduction
+
+The job market in 2024 is changing rapidly because of artificial intelligence, data science, automation, and cloud-based business systems. Many organizations now rely on data-driven decision-making to improve operations, understand customers, and make strategic choices.
+
+This project focuses on the following research question:
+
+**What skills and job characteristics should students focus on in order to improve their career prospects in business analytics, data science, and machine learning roles?**
+
+This topic is important because students entering the job market need to understand which skills are most valuable and how those skills connect to salary, remote work opportunities, and long-term career growth.
+
+# 2. Research Rationale
+
+Business analytics and data science are becoming increasingly important across industries. Companies no longer need only technical specialists; they also need employees who can interpret data, communicate insights, and connect analytics to business decisions.
+
+For job seekers, this means that technical skills alone are not enough. A strong candidate should combine programming, database knowledge, analytical thinking, visualization, and business communication. This project uses data analysis and machine learning methods to better understand which skills matter most and how students can prepare for the job market.
+
+# 3. Data Cleaning and Preparation
+
+The data preparation process focused on improving the quality and usability of the dataset before analysis. Several common data cleaning steps were considered:
+
+- Removing unnecessary columns such as ID fields, URLs, duplicated classification codes, and tracking variables.
+- Handling missing values in numerical and categorical fields.
+- Removing duplicate job postings to avoid double-counting.
+- Keeping relevant variables related to job title, salary, skills, industry, location, and remote work status.
+
+These steps help make the dataset more reliable for analysis. Cleaning the data is important because poor data quality can lead to misleading conclusions.
+
+# 4. Exploratory Data Analysis
+
+The exploratory data analysis focused on three main areas:
+
+## 4.1 Job Postings by Industry
+
+The first part of the analysis examined which industries show stronger demand for data-related roles. This helps job seekers understand where opportunities may be concentrated.
+
+Industries with higher demand for analytics and data science roles are important targets for students because they may offer more entry-level opportunities and stronger career development paths.
+
+## 4.2 Salary Distribution
+
+The second part of the analysis explored salary patterns across different types of roles and skill requirements. In general, roles that require stronger technical skills tend to have higher salary potential.
+
+This suggests that technical skill development can improve a job seeker’s competitiveness and earning potential.
+
+## 4.3 Remote and On-Site Work
+
+The third part of the analysis considered remote versus on-site jobs. Remote work remains an important feature of the modern job market, especially for technical and analytics-related roles.
+
+For job seekers, remote opportunities can expand the number of possible employers and reduce geographic limitations.
+
+# 5. Skill Gap Analysis
+
+The skill gap analysis compares current personal skills with skills commonly required in data-related job postings.
+
+## 5.1 Current Skill Assessment
+
+The following table summarizes my current estimated skill levels on a 1–5 scale.
+
+| Skill | Current Level | Interpretation |
+|---|---:|---|
+| Python | 4 | Strong working knowledge |
+| SQL | 3 | Intermediate knowledge |
+| Machine Learning | 3 | Intermediate knowledge |
+| Data Visualization | 4 | Strong working knowledge |
+| Cloud Computing | 2 | Basic knowledge |
+
+## 5.2 Skill Gap Interpretation
+
+The analysis shows that my strongest areas are Python and data visualization. These skills are useful for data analysis, reporting, and communicating insights.
+
+However, cloud computing and advanced machine learning remain areas for improvement. Since cloud platforms and machine learning tools are increasingly common in analytics jobs, improving these skills should be a priority.
+
+## 5.3 Improvement Plan
+
+Based on the skill gap analysis, I plan to focus on three actions:
+
+1. Improve cloud computing skills by learning AWS and Azure basics.
+2. Build more machine learning projects using Python.
+3. Strengthen SQL skills through database and analytics practice.
+
+# 6. Predictive Modeling
+
+This project includes two machine learning methods: KMeans clustering and multiple linear regression.
+
+# 6.1 KMeans Clustering
+
+KMeans clustering was used to group jobs based on skill-related features. The purpose of this model is to identify patterns among roles with similar skill requirements.
+
+The clustering analysis suggests that jobs can be grouped into different segments based on technical intensity. Jobs requiring Python, SQL, machine learning, and cloud computing tend to belong to higher-skill clusters.
+
+For job seekers, this means that combining multiple technical skills may improve access to stronger job opportunities.
+
+# 6.2 Multiple Linear Regression
+
+Multiple linear regression was used to model salary as the target variable. The features included technical skill indicators such as Python, SQL, machine learning, and cloud computing.
+
+The purpose of this model is to understand how skill requirements may help explain salary differences.
+
+The regression model was evaluated using:
+
+- RMSE
+- R-squared
+
+RMSE measures the average prediction error in salary units, while R-squared measures how much salary variation is explained by the model.
+
+# 6.3 Model Interpretation
+
+The modeling results suggest that technical skills can be useful predictors of salary. Skills such as Python, SQL, machine learning, and cloud computing are especially important because they are often connected to more technical and higher-value roles.
+
+For job seekers, the main implication is clear: developing a strong technical foundation can improve career opportunities and salary potential.
+
+# 7. Key Findings
+
+Several key findings emerge from the analysis:
+
+1. Data-related roles continue to be important across multiple industries.
+2. Python and SQL are foundational skills for business analytics and data science roles.
+3. Machine learning and cloud computing may provide additional competitive advantages.
+4. Higher-skill roles tend to be associated with stronger salary potential.
+5. Data visualization and communication are important because employers need analysts who can explain insights clearly.
+
+# 8. Recommendations for Job Seekers
+
+Based on the findings, job seekers should consider the following recommendations:
+
+## 8.1 Build a Strong Technical Foundation
+
+Students should prioritize Python, SQL, and data visualization. These skills appear across many analytics and data science roles.
+
+## 8.2 Develop Advanced Skills
+
+After building a foundation, job seekers should learn machine learning and cloud computing. These skills may help candidates qualify for more technical and higher-paying roles.
+
+## 8.3 Create a Project Portfolio
+
+Job seekers should build portfolio projects that combine data cleaning, visualization, modeling, and business interpretation. A portfolio can demonstrate practical ability to employers.
+
+## 8.4 Connect Analytics to Business Problems
+
+Employers value candidates who can explain what the data means. Therefore, students should practice writing clear interpretations and business recommendations.
+
+# 9. Limitations
+
+This project has several limitations.
+
+First, the analysis uses a simplified dataset and demonstration-based modeling features. As a result, the findings may not fully represent the entire labor market.
+
+Second, salary prediction is complex and can be influenced by many factors, including company size, location, experience level, education, and industry.
+
+Third, additional real-world Lightcast data would improve the accuracy and depth of the analysis.
+
+# 10. Conclusion
+
+This project demonstrates how data analysis and machine learning can help job seekers understand labor market trends. The results show that technical skills such as Python, SQL, machine learning, and cloud computing are valuable for business analytics and data science careers.
+
+The main career takeaway is that students should focus on building both technical and communication skills. By combining data analysis, visualization, machine learning, and business interpretation, job seekers can better position themselves for success in the 2024 job market.
+
+# References
+
+Autor, D. H. (2015). Why are there still so many jobs? The history and future of workplace automation. *Journal of Economic Perspectives, 29*(3), 3–30.
+
+Brynjolfsson, E., & McAfee, A. (2014). *The second machine age: Work, progress, and prosperity in a time of brilliant technologies*. W. W. Norton & Company.
+
+Manyika, J., Lund, S., Chui, M., Bughin, J., Woetzel, J., Batra, P., Ko, R., & Sanghvi, S. (2017). *Jobs lost, jobs gained: Workforce transitions in a time of automation*. McKinsey Global Institute.
