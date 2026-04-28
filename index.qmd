@@ -1,0 +1,31 @@
+---
+title: "Job Market Analysis 2024"
+author: "Yifan Cui"
+format: html
+---
+
+# Introduction
+
+In 2024, the job market is changing rapidly because of artificial intelligence, data science, and business analytics. Many companies are using data to support decision-making, improve operations, and understand customers. As a result, students entering the labor market need to understand which roles, industries, and skills are becoming more valuable.
+
+This project focuses on trends in data science and business analytics careers. The goal is to analyze what skills and roles are most in demand in 2024 and how students can better prepare themselves for future job opportunities.
+
+# Research Rationale
+
+This topic is important because business analytics and data science are closely related to my academic and career interests. As more companies adopt AI tools and data-driven strategies, the demand for employees with analytical, technical, and communication skills continues to increase. Understanding these trends can help job seekers make better decisions about what skills to learn and which career paths to target.
+
+I expect to find that skills such as Python, SQL, machine learning, data visualization, and business communication are highly valued in 2024 job postings. I also expect that analytics roles will appear across many industries, not only in technology companies.
+
+# Brief Literature Review
+
+Recent labor market research shows that artificial intelligence and automation are changing the structure of employment. Some jobs may be reduced or transformed, while new roles related to AI, data analysis, and machine learning continue to grow. This suggests that job seekers need to adapt by developing skills that match new employer expectations.
+
+Research on data science and analytics careers also emphasizes the importance of combining technical and business skills. Employers often look for candidates who can not only use tools such as Python, SQL, and visualization software, but also explain insights clearly and support business decisions. Therefore, business analytics professionals may have strong career opportunities if they can connect data analysis with real business problems.
+
+# Preliminary Career Strategy
+
+Based on this topic, my personal career strategy will focus on three steps. First, I will continue improving my technical skills in Python, SQL, data visualization, and machine learning. Second, I will build portfolio projects that show my ability to analyze real-world business data. Third, I will target internships and entry-level roles in business analytics, data analytics, and data science where I can apply both analytical and business knowledge.
+
+# References
+
+References will be expanded in the next stage of the project using academic sources from Google Scholar and labor market reports.
