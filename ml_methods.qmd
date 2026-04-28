@@ -4,118 +4,51 @@ author: "Yifan Cui"
 format: html
 ---
 
-# Introduction
+# Predictive Modeling
 
-This section applies machine learning methods to understand job market patterns and salary outcomes.
+This section applies machine learning methods to analyze job market patterns.
 
-# Model 1: KMeans Clustering
-
-KMeans clustering is used to group jobs into different segments based on skill-related features.
+## KMeans Clustering
 
 ```{python}
 import pandas as pd
-import numpy as np
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
 
-# Simulated dataset
+# simulated dataset
 data = {
-    "Python": [1,1,0,1,0,1,1,0,1,0],
+    "Python": [1,1,0,1,0,1,0,1,0,1],
     "SQL": [1,1,1,1,0,1,1,1,0,0],
     "Machine_Learning": [1,1,0,1,0,1,0,0,1,0],
-    "Cloud": [0,1,0,1,0,1,0,0,1,0],
+    "Cloud": [0,1,0,1,0,0,1,0,1,0],
     "Salary": [95000,115000,78000,125000,65000,118000,90000,72000,110000,60000]
 }
 
 df = pd.DataFrame(data)
-df
-```
 
-```{python}
-# Feature scaling
-features = df[["Python","SQL","Machine_Learning","Cloud"]]
+features = df[["Python", "SQL", "Machine_Learning", "Cloud"]]
 
 scaler = StandardScaler()
 X_scaled = scaler.fit_transform(features)
 
-# KMeans
 kmeans = KMeans(n_clusters=3, random_state=42, n_init=10)
 df["Cluster"] = kmeans.fit_predict(X_scaled)
 
 df
 ```
 
+## Visualization (IMPORTANT)
+
 ```{python}
-# Visualization
 plt.figure(figsize=(6,4))
 plt.scatter(df["Machine_Learning"], df["Salary"], c=df["Cluster"])
-plt.xlabel("Machine Learning Skill Requirement")
+plt.title("KMeans Clustering Result")
+plt.xlabel("Machine Learning Skill (0/1)")
 plt.ylabel("Salary")
-plt.title("KMeans Clustering of Jobs")
 plt.show()
 ```
 
-# KMeans Interpretation
+## Interpretation
 
-The clustering separates jobs into groups:
-
-- Low skill → low salary  
-- Medium skill → medium salary  
-- High skill → high salary  
-
-This shows a strong relationship between skill level and salary.
-
----
-
-# Model 2: Multiple Linear Regression
-
-Multiple linear regression is used to predict salary based on skills.
-
-```{python}
-from sklearn.linear_model import LinearRegression
-
-X = df[["Python","SQL","Machine_Learning","Cloud"]]
-y = df["Salary"]
-
-model = LinearRegression()
-model.fit(X, y)
-
-print("Coefficients:", model.coef_)
-print("Intercept:", model.intercept_)
-```
-
-# Regression Interpretation
-
-- Machine Learning has the strongest impact on salary  
-- SQL and Python also contribute positively  
-- Cloud skills show moderate influence  
-
----
-
-# Evaluation Metrics
-
-```{python}
-from sklearn.metrics import r2_score
-
-y_pred = model.predict(X)
-
-print("R2 Score:", r2_score(y, y_pred))
-```
-
-The model shows a good fit, indicating skills explain salary variation.
-
----
-
-# Implications for Job Seekers
-
-- Focus on Machine Learning and Data skills  
-- Strengthen SQL and Python  
-- Add Cloud skills for competitive advantage  
-
----
-
-# Conclusion
-
-Machine learning models help reveal patterns in the job market.  
-Higher technical skills strongly correlate with higher salaries.
+The clustering results show that jobs can be grouped based on skill requirements. Roles requiring machine learning skills tend to have higher salaries.
