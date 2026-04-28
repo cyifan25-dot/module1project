@@ -1,5 +1,40 @@
 [
   {
+    "objectID": "findings.html",
+    "href": "findings.html",
+    "title": "Findings and Insights",
+    "section": "",
+    "text": "This project analyzes job market trends using data analysis and machine learning techniques. The goal is to identify which skills and job characteristics are most valuable and how job seekers can better prepare for the market."
+  },
+  {
+    "objectID": "findings.html#demand-for-data-related-roles",
+    "href": "findings.html#demand-for-data-related-roles",
+    "title": "Findings and Insights",
+    "section": "1. Demand for Data-Related Roles",
+    "text": "1. Demand for Data-Related Roles\nThe analysis shows that data-related roles such as Data Analyst, Data Scientist, and Machine Learning Engineer are in high demand across industries. This suggests that data-driven decision-making is becoming a standard practice in modern organizations."
+  },
+  {
+    "objectID": "findings.html#importance-of-technical-skills",
+    "href": "findings.html#importance-of-technical-skills",
+    "title": "Findings and Insights",
+    "section": "2. Importance of Technical Skills",
+    "text": "2. Importance of Technical Skills\nFrom both the exploratory analysis and skill gap analysis, technical skills such as Python, SQL, machine learning, and cloud computing are consistently associated with higher demand and higher salaries.\nThe regression model further supports this finding by showing that these skills can be used as predictors of salary."
+  },
+  {
+    "objectID": "findings.html#salary-patterns",
+    "href": "findings.html#salary-patterns",
+    "title": "Findings and Insights",
+    "section": "3. Salary Patterns",
+    "text": "3. Salary Patterns\nThe salary distribution analysis shows clear differences across roles and industries. Jobs requiring advanced technical skills tend to have higher salary ranges.\nThe regression model confirms that skill requirements play an important role in explaining salary variation."
+  },
+  {
+    "objectID": "findings.html#job-segmentation",
+    "href": "findings.html#job-segmentation",
+    "title": "Findings and Insights",
+    "section": "4. Job Segmentation",
+    "text": "4. Job Segmentation\nKMeans clustering results indicate that jobs can be grouped into different segments based on skill requirements. Higher-skill clusters are associated with higher salaries, suggesting a strong relationship between skill level and job value."
+  },
+  {
     "objectID": "data_analysis.html",
     "href": "data_analysis.html",
     "title": "Data Analysis",
@@ -40,6 +75,13 @@
     "title": "Skill Gap Analysis",
     "section": "",
     "text": "Introduction\nThis section analyzes the gap between current skills and the skills required in the job market. By comparing personal skills with industry demand, we can identify areas for improvement.\n\n\nTeam Skill Levels\nBelow is a simple representation of skill levels.\nimport pandas as pd\n\nskills_data = {\n    \"Name\": [\"Yifan\"],\n    \"Python\": [4],\n    \"SQL\": [3],\n    \"Machine Learning\": [3],\n    \"Data Visualization\": [4],\n    \"Cloud Computing\": [2]\n}\n\ndf = pd.DataFrame(skills_data)\ndf.set_index(\"Name\", inplace=True)\ndf\n\n\nVisualization\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\nplt.figure(figsize=(6,4))\nsns.heatmap(df, annot=True, cmap=\"coolwarm\")\nplt.title(\"Skill Level Heatmap\")\nplt.show()\n\n\nSkill Gap Analysis\nFrom the job market, the most demanded skills include Python, SQL, Machine Learning, Cloud Computing, and Data Engineering.\nComparing with my current skills, I have strong ability in Python and visualization, but I need to improve in cloud computing and advanced machine learning techniques.\n\n\nImprovement Plan\n\nImprove cloud computing skills such as AWS and Azure.\nPractice more machine learning projects.\nStrengthen SQL and database optimization.\nBuild more portfolio projects."
+  },
+  {
+    "objectID": "conclusion.html",
+    "href": "conclusion.html",
+    "title": "Conclusion",
+    "section": "",
+    "text": "Conclusion\nThis project analyzed job market trends using data analysis and machine learning techniques. The results highlight the growing importance of technical skills such as Python, SQL, and Machine Learning.\nAdditionally, data visualization and communication skills are critical for translating data insights into business value.\nOverall, this project demonstrates how data-driven approaches can help job seekers better understand market demands and make informed career decisions.\n\n\nFuture Work\nFuture improvements could include:\n\nUsing real-world datasets\nApplying more advanced machine learning models\nExpanding analysis to different industries"
   },
   {
     "objectID": "ml_methods.html",

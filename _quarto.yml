@@ -13,7 +13,11 @@ website:
       - href: skill_gap_analysis.qmd
         text: "Skill Gap Analysis"
       - href: ml_methods.qmd
-        text: "Predictive Modeling"        
+        text: "Predictive Modeling"  
+      - href: findings.qmd
+        text: "Findings"
+      - href: conclusion.qmd
+        text: "Conclusion"  
 
 format:
   html:

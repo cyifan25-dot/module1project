@@ -1,0 +1,21 @@
+---
+title: "Conclusion"
+author: "Yifan Cui"
+format: html
+---
+
+# Conclusion
+
+This project analyzed job market trends using data analysis and machine learning techniques. The results highlight the growing importance of technical skills such as Python, SQL, and Machine Learning.
+
+Additionally, data visualization and communication skills are critical for translating data insights into business value.
+
+Overall, this project demonstrates how data-driven approaches can help job seekers better understand market demands and make informed career decisions.
+
+# Future Work
+
+Future improvements could include:
+
+- Using real-world datasets
+- Applying more advanced machine learning models
+- Expanding analysis to different industries

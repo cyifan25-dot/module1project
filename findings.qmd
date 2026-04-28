@@ -1,0 +1,48 @@
+---
+title: "Findings and Insights"
+author: "Yifan Cui"
+format: html
+---
+
+# Overview
+
+This project analyzes job market trends using data analysis and machine learning techniques. The goal is to identify which skills and job characteristics are most valuable and how job seekers can better prepare for the market.
+
+# Key Findings
+
+## 1. Demand for Data-Related Roles
+
+The analysis shows that data-related roles such as Data Analyst, Data Scientist, and Machine Learning Engineer are in high demand across industries. This suggests that data-driven decision-making is becoming a standard practice in modern organizations.
+
+## 2. Importance of Technical Skills
+
+From both the exploratory analysis and skill gap analysis, technical skills such as Python, SQL, machine learning, and cloud computing are consistently associated with higher demand and higher salaries.
+
+The regression model further supports this finding by showing that these skills can be used as predictors of salary.
+
+## 3. Salary Patterns
+
+The salary distribution analysis shows clear differences across roles and industries. Jobs requiring advanced technical skills tend to have higher salary ranges.
+
+The regression model confirms that skill requirements play an important role in explaining salary variation.
+
+## 4. Job Segmentation
+
+KMeans clustering results indicate that jobs can be grouped into different segments based on skill requirements. Higher-skill clusters are associated with higher salaries, suggesting a strong relationship between skill level and job value.
+
+# Insights for Job Seekers
+
+Based on the findings, several important insights can be drawn:
+
+1. Developing strong programming skills such as Python and SQL is essential for entering the data job market.
+2. Learning advanced topics such as machine learning and cloud computing can significantly improve career opportunities.
+3. Building projects that integrate multiple skills is more effective than learning individual tools in isolation.
+4. Understanding job market trends can help job seekers make more informed career decisions.
+
+# Limitations
+
+This project uses a simplified dataset and simulated features, which may not fully capture real-world job market complexity. In future work, larger datasets and more detailed features could improve the accuracy of the analysis.
+
+# Conclusion
+
+Overall, the job market is increasingly driven by data and technology. Individuals who invest in developing analytical and technical skills are more likely to succeed in this evolving environment. This project demonstrates how data analysis and machine learning can support career planning and decision-making.
