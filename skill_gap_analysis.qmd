@@ -1,0 +1,55 @@
+---
+title: "Skill Gap Analysis"
+author: "Yifan Cui"
+format: html
+---
+
+# Introduction
+
+This section analyzes the gap between current skills and the skills required in the job market. By comparing personal skills with industry demand, we can identify areas for improvement.
+
+# Team Skill Levels
+
+Below is a simple representation of skill levels.
+
+~~~python
+import pandas as pd
+
+skills_data = {
+    "Name": ["Yifan"],
+    "Python": [4],
+    "SQL": [3],
+    "Machine Learning": [3],
+    "Data Visualization": [4],
+    "Cloud Computing": [2]
+}
+
+df = pd.DataFrame(skills_data)
+df.set_index("Name", inplace=True)
+df
+~~~
+
+# Visualization
+
+~~~python
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+plt.figure(figsize=(6,4))
+sns.heatmap(df, annot=True, cmap="coolwarm")
+plt.title("Skill Level Heatmap")
+plt.show()
+~~~
+
+# Skill Gap Analysis
+
+From the job market, the most demanded skills include Python, SQL, Machine Learning, Cloud Computing, and Data Engineering.
+
+Comparing with my current skills, I have strong ability in Python and visualization, but I need to improve in cloud computing and advanced machine learning techniques.
+
+# Improvement Plan
+
+1. Improve cloud computing skills such as AWS and Azure.
+2. Practice more machine learning projects.
+3. Strengthen SQL and database optimization.
+4. Build more portfolio projects.
